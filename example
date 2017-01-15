@@ -1,0 +1,150 @@
+#load boostrap and jquery
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+# create an element that will open a modal
+<h1 class="film" data-toggle="modal" href="film/bolleinfo.html" data-target="#myModal">bolle</h1>
+
+#href shows where to get modal content
+#data-target shows where to display modal content
+
+#create an empty modal
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content" style="z-index: 2;">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+       
+      </div>
+      <div class="modal-body">
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+#external file with modal content
+<div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">X</button>
+      <h1>Bolle</h1>
+    </div>
+    <div class="modal-body">
+    <div class="row">
+    	<div class="col-lg-6 col-md-6">
+    		<img src="images/bolle.jpg" class="img-responsive">
+    	</div>
+    	<div class="col-lg-6 col-md-6">
+    		<h3>Bolle Prestige [볼레 프레스티지]</h3>
+				<p>볼레 선글라스에서부터 시작 된 틴팅 기술을 이제 자동차에서도 만나실 수 있습니다.</p>
+				<ul>
+					<li>볼레 선글라스 틴팅 기술</li>
+					<li>열과 눈부심에 대한 뛰어난 차단율</li>
+					<li>수정처럼 깨끗한 광학</li>
+				</ul>
+    		
+    	</div>
+    </div>
+    <h3>TECHNICAL DATA</h3>
+			<div class="container" style="width:100%;">
+				
+					<table class="table pull-left">
+						<tr>
+							<th>가시광선 투과율</th>
+							<th>태양에너지 차단율</th>
+							<th>눈부심 방지</th>
+						</tr>
+						<tr>
+							<td>5%</td>
+							<td>63%</td>
+							<td>94%</td>
+						</tr>
+						<tr>
+							<td>20%</td>
+							<td>59%</td>
+							<td>77%</td>
+						</tr>
+					</table>
+				
+			</div>
+	<h3>CHARACTERISTIC</h3>
+			<div class="container" style="width:100%;">
+				<div class="row">
+
+					<div class="col-lg-6">						
+						<div style="text-align:left;">
+							<ul>
+							<li>BOLLE 선글라스의 최첨단 기술을 차량 틴팅에 이용한 업그레이드 BOLLE를 차량 내부에서 경험하실 수 있습니다.</li>
+							<li>태양에너지 차단율이 높은 필름으로 여름에 차량 내부를 시원하게 해줄 뿐만 아니라 에어컨이 더욱 효율적으로 작동하도록 도와주어 연료 경제성 및 운전자의 편안함을 고려하였습니다.</li>
+							<li>뛰어난 눈부심 방지는 운전자들의 피로감을 줄여주며, 운전 환경을 더욱 편안하게 유지하도록 도와줍니다.</li>
+							<li>99% 자외선을 차단하여 탑승자와 차량의 인테리어를 보호해줄 뿐만 아니라 차량 내의 귀중품이 자외선으로부터 탈색 및 손상 되는 것을 방지 해 줍니다.</li>
+							<li>틴트어카의 필름은 창문이 깨져도 유리 파편이 흐트러지지 않도록 도와줍니다.</li>
+						</ul>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<table class="table">
+							<tr>
+								<th>자외선 차단율</th>
+								<td>99%</td>
+							</tr>
+							<tr>
+								<th>가시광선 반사율</th>
+								<td>9%</td>
+							</tr>
+							<tr>
+								<th>필름두께</th>
+								<td>1.5MIL/38MICRON</td>
+							</tr>
+							<tr>
+								<th>접착제</th>
+								<td>EXTRA BOND ADHESIVE</td>
+							</tr>
+							<tr>
+								<th>메탈 포함 여부</th>
+								<td>NON METAL</td>
+							</tr>
+							<tr>
+								<th>전파방해</th>
+								<td>NO</td>
+							</tr>
+							<tr>
+								<th>건조시간</th>
+								<td>48HOURS</td>
+							</tr>
+							<tr>
+								<th>스크래치 방지 코팅 	</th>
+								<td>YES</td>
+							</tr>
+							<tr>
+								<th>필름색상</th>
+								<td>DARK GREEN</td>
+							</tr>
+						</table><br>
+						<p>NOTE : THE CURING TIME IS BASED ON ‘SUMMER’ CONDITIONS</p>
+					</div>
+				</div>
+			</div>
+	<h3>WARRANTY</h3>
+		<ul>
+			<li>BOLLE Prestige : 평생 보증</li>
+		</ul>
+      
+      
+    </div>
+    
+#jQuery script to clean modal content if you have multiple external files that you wish to display in a same modal
+<script>
+    $(document).on('hidden.bs.modal', function (e) {
+    var target = $(e.target);
+    target.removeData('bs.modal')
+    .find(".modal-body").html('');
+    });
+</script>
